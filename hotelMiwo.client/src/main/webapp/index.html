@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html ng-app="hotelmiwo">
+<head>
+    <meta charset="utf-8">
+    <title>Hotel Miwo</title>
+
+    <link rel="stylesheet" href="assets/layout/main.css">
+    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 3rd-Party Libs -->
+    <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+    <script src="assets/lib/angular/angular.min.js"></script>
+    <script src="assets/lib/angular-route/angular-route.min.js"></script>
+    <script src="assets/lib/angular-cookies/angular-cookies.min.js"></script>
+    <script src="assets/lib/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="assets/lib/angular-translate/angular-translate.min.js"></script>
+    <script src="assets/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <!-- Application Files -->
+    <script src="app.js"></script>
+    <script src="components/home/home.js"></script>
+    <script src="components/login/login.js"></script>
+    <script src="components/logout/logout.js"></script>
+    <script src="components/content/content.js"></script>
+    <script src="components/ranking/ranking.js"></script>
+    <script src="services/auth-api/auth-api.js"></script>
+    <script src="services/anwender-api/anwender-api.js"></script>
+</head>
+<body class="container" ng-cloak>
+
+<header>
+    <nav class="navbar navbar-default col-sm-12">
+        <div class="col-sm-6 col-sx-6" href="#/">
+            <span class="logo col-sm-9 col-sx-12"></span>
+        </div>
+        <div class="col-sm-6 col-sx-6 navbar-link">
+            <a class="col-sm-3 col-sx-3" href="#/">Home</a>
+            <a class="col-sm-3 col-sx-3" href="#/ranking">Ranking</a>
+            <a class="col-sm-3 col-sx-3" href="#/content">Content</a>
+            <span ng-if="!globals.currentUser"><a class="col-sm-3 col-sx-3" href="#/login">login</a></span>
+            <span ng-if="globals.currentUser"><a class="col-sm-3 col-sx-3" href="#/logout">logout</a></span>
+        </div>
+    </nav>
+</header>
+
+<div class="container-fluid" autoscroll="false" ng-view></div>
+
+<footer>
+</footer>
+</body>
+</html>

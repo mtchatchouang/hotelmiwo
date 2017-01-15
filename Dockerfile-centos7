@@ -1,0 +1,11 @@
+FROM centos:7
+MAINTAINER Maturin Tchatchouang <mtc@adorsys.com>
+
+RUN yum -y update
+RUN yum install zip unzip -y
+RUN yum -y install tar tree
+RUN ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+RUN yum clean all
+
+CMD /bin/bash
+

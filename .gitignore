@@ -1,0 +1,11 @@
+*/target/
+.project
+.classpath
+bin/
+node_modules/
+.settings/
+.idea/
+.DS_Store
+*.iml
+*/*.iml
+.metadata/

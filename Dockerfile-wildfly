@@ -1,0 +1,16 @@
+FROM jboss/wildfly:10.0.0.Final
+MAINTAINER Maturin Tchatchouang <mtc@adorsys.de>
+
+COPY hotelMiwo.server/target/hotelMiwo.server.war /opt/jboss/wildfly/standalone/deployments/
+COPY hotelMiwo.client/target/hotelMiwo.client.war /opt/jboss/wildfly/standalone/deployments
+
+COPY files/standalone.xml /opt/jboss/wildfly/standalone/configuration/
+COPY files/module.xml /opt/jboss/wildfly/modules/com/mysql/main/
+COPY files/mysql-connector-java-5.1.39-bin.jar /opt/jboss/wildfly/modules/com/mysql/main/
+
+RUN /opt/jboss/wildfly/bin/add-user.sh admin Admin#70365 --silent
+
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0", "--debug"]
+
+
+

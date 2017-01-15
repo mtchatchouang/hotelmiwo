@@ -1,0 +1,3 @@
+<jboss-web>
+    <security-domain>mydbsecurity</security-domain>
+</jboss-web>

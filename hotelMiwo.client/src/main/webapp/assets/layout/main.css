@@ -1,0 +1,23 @@
+/*
+    miwo-green = #749D2B
+    miwo blue = #0C146D
+*/
+
+.logo {
+    background-image: url('../img/logo_hotelmiwo.jpg');
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    margin: 10px 0;
+    background-size: 300px 300px;
+}
+
+.navbar-link{
+    margin-top: 20px;
+    font-size: large;
+}
+
+body > header > nav{
+    background-color: transparent !important;
+    border-color: transparent !important;
+}

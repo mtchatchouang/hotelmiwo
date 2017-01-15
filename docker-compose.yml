@@ -1,0 +1,19 @@
+mysql:
+  image: mysql:5.7.16
+  environment:
+    - MYSQL_ROOT_PASSWORD=mypassword
+    - MYSQL_DATABASE=mydb
+  volumes:
+    - ./files/conf.d:/etc/conf.d
+    - ./files/data:/docker-entrypoint-initdb.d
+  ports:
+    - "3306:3306"
+wildfly:
+  image: jboss/wildfly:10.0.0
+  ports:
+    - "8080:8080"
+    - "8787:8787"
+    - "9990:9990"
+    - "9999:9999"
+  links:
+    - mysql
